@@ -8,12 +8,12 @@ export class AlertifyService {
 
   constructor() { }
 
-  message(message:string,messageType:MessageType,position:Position,delay:number=3,dismissOthers:boolean=false){
-
-    alertify.set('notifier','delay',delay)
-    alertify.set('notifier','position',position)
-    const msj=alertify[messageType](message);
-    if(dismissOthers)
+//  message(message:string,messageType:MessageType,position:Position,delay:number=3,dismissOthers:boolean=false)
+  message(message: string, options: Partial<AlertifyOptions>) {
+    alertify.set('notifier', 'delay', options.delay);
+    alertify.set('notifier', 'position', options.position);
+    const msj = alertify[options.messageType](message);
+    if (options.dismissOthers)
       msj.dismissOthers();
   }
   dismiss(){
@@ -21,6 +21,15 @@ export class AlertifyService {
 
   }
 
+  
+
+}
+
+export class AlertifyOptions {
+  messageType: MessageType = MessageType.Message;
+  position: Position = Position.BottomLeft;
+  delay: number = 3;
+  dismissOthers: boolean = false;
 }
 
 export enum MessageType {

@@ -20,7 +20,11 @@ export class DashboardComponent implements OnInit {
   m()
   {
 
-    this.alertify.message("Merhaba",MessageType.Error,Position.BottomLeft,15)
+    this.alertify.message("Merhaba",{
+      messageType:MessageType.Success,
+      delay:5,
+      position:Position.TopRight
+    })
 
   }
   d()
