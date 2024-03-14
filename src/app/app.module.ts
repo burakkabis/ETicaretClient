@@ -27,7 +27,8 @@ import { BaseComponent } from './base/base.component';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {provide:"baseUrl",useValue:"https://localhost:4200/api",multi:true}
   ],
   bootstrap: [AppComponent]
 })
