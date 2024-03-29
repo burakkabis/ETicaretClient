@@ -17,19 +17,51 @@ export class ProductsComponent extends BaseComponent implements OnInit {
 
   ngOnInit():void{ 
 
-    this.showSpinner(SpinnerType.BallAtom)
-    this.httpClientService.get({
-      controller:"products"
-    }).subscribe(data => console.log(data))
+    // this.showSpinner(SpinnerType.BallAtom)
+    // //controller:"products" baska bir sey vermedigim takdirde ana moduldeki(app.module.ts teki provide deki link(baseurl(localhost....)) temsil edilecek.)
+    // this.httpClientService.get({
+    //   controller:"products"
+    // }).subscribe(data => console.log(data))
 
-    this.httpClientService.post({
-      controller:"products"
+    // this.httpClientService.post({
+    //   controller:"products"
 
-    },{
-      name:"Kalem",
-      stock:100,
-      price:15
-    }).subscribe();
+    // },{
+    //   name:"Kalem",
+    //   stock:100,
+    //   price:15
+    // }).subscribe();
+
+
+    // this.httpClientService.post({
+    //   controller:"products"
+
+    // },{
+    //   name:"Silgi",
+    //   stock:220,
+    //   price:5
+    // }).subscribe();
+
+
+    // this.httpClientService.post({
+    //   controller:"products"
+
+    // },{
+    //   name:"Defter",
+    //   stock:50,
+    //   price:25
+    // }).subscribe();
+
+    // this.httpClientService.get({
+
+    //   baseUrl:"https://jsonplaceholder.typicode.com/posts",
+    //   controller:"posts"
+    // }).subscribe(data=>console.log(data))
+
   }
+
+
+
+  
 
 }
